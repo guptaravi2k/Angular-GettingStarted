@@ -2,9 +2,9 @@
 
   <p>
 
-    <select formControlName="country">
-      <option [ngValue]="null" disabled>Select Country</option>
-      <option *ngFor="let country of countries" [ngValue]="country.id">{{country.name}}</option>
+    <select formControlName="sector">
+      <option [ngValue]="null" disabled>Select sector</option>
+      <option *ngFor="let sector of sectors" [ngValue]="sector.id">{{sector.name}}</option>
     </select>
 
     <button type="submit">Submit</button>

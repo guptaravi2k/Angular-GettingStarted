@@ -13,18 +13,17 @@ import {Trade} from "./Trade";
 })
 export class TradeComponent implements OnInit  {
   contactForm = this.fb.group({
-    country: [null]
+    sector: [null]
   });
 
   trade: Trade = {};
   errorMessage = '';
 
-  countries = [
-    { id: 1, name: "United States" },
-    { id: 2, name: "Australia" },
-    { id: 3, name: "Canada" },
-    { id: 4, name: "Brazil" },
-    { id: 5, name: "England" }
+  sectors = [
+    { id: 1, name: "Nifty 500" },
+    { id: 2, name: "Nifty 50" },
+    { id: 3, name: "Nifty Bank" },
+    { id: 4, name: "F&O stocks" }
   ];
 
   constructor(private fb:FormBuilder, private tradeService: TradeService) {
@@ -34,7 +33,7 @@ export class TradeComponent implements OnInit  {
   ngOnInit() {
 
     this.contactForm = this.fb.group({
-      country: [null]
+      sector: [null]
     });
   }
 
@@ -47,7 +46,7 @@ export class TradeComponent implements OnInit  {
        catchError(this.handleError)
      );*/
 
-    this.tradeService.getMarketTrend().subscribe({
+    this.tradeService.getMarketTrend(this.contactForm.value.sector).subscribe({
       next: trade => {this.trade = trade; console.log(this.trade)},
       error: err => this.errorMessage = err
     });

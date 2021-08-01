@@ -11,13 +11,13 @@ export class TradeService {
   // If using Stackblitz, replace the url with this line
   // because Stackblitz can't find the api folder.
   // private productUrl = 'assets/products/products.json';
-  //private marketTrend = 'http://localhost:8080/market-trend';
-  private marketTrend = 'https://anmol-v.herokuapp.com/market-trend';
+  private marketTrend = 'http://localhost:8080/market-trend?sector=';
+  //private marketTrend = 'https://anmol-v.herokuapp.com/market-trend';
 
   constructor(private http: HttpClient) { }
 
-  getMarketTrend(): Observable<Trade> {
-    return this.http.get<Trade>(this.marketTrend);
+  getMarketTrend(sector: string): Observable<Trade> {
+    return this.http.get<Trade>(this.marketTrend + sector);
       /*.pipe(
         tap(data => console.log('All: ', JSON.stringify(data))),
         catchError(this.handleError)
