@@ -16,7 +16,7 @@ export class TradeComponent implements OnInit  {
     country: [null]
   });
 
-  trade: Trade | undefined;
+  trade: Trade = {};
   errorMessage = '';
 
   countries = [

@@ -11,7 +11,8 @@ export class TradeService {
   // If using Stackblitz, replace the url with this line
   // because Stackblitz can't find the api folder.
   // private productUrl = 'assets/products/products.json';
-  private marketTrend = 'http://localhost:8080/market-trend';
+  //private marketTrend = 'http://localhost:8080/market-trend';
+  private marketTrend = 'https://anmol-v.herokuapp.com/market-trend';
 
   constructor(private http: HttpClient) { }
 

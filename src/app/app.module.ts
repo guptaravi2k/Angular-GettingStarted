@@ -30,9 +30,9 @@ import {DemoMaterialModule} from "./material.module";
     HttpClientModule,
     DemoMaterialModule,
     RouterModule.forRoot([
-      { path: 'welcome', component: WelcomeComponent },
-      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-      { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
+      { path: 'trade', component: TradeComponent },
+      { path: '', redirectTo: 'trade', pathMatch: 'full' },
+      { path: '**', redirectTo: 'trade', pathMatch: 'full' },
 
     ],
       { enableTracing: true }),

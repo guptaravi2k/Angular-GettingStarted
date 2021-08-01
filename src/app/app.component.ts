@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
     <nav class='navbar navbar-expand navbar-light bg-light'>
         <a class='navbar-brand'>{{pageTitle}}</a>
         <ul class='nav nav-pills'>
-          <li><a class='nav-link' routerLinkActive='active' routerLink='/welcome'>Home</a></li>
-          <li><a class='nav-link' routerLinkActive='active' routerLink='/products'>Product List</a></li>
-          <li><a class='nav-link' routerLinkActive='active' routerLink='/trade'>Trade</a></li>
+<!--          <li><a class='nav-link' routerLinkActive='active' routerLink='/welcome'>Home</a></li>
+          <li><a class='nav-link' routerLinkActive='active' routerLink='/products'>Product List</a></li>-->
+          <!--<li><a class='nav-link' routerLinkActive='active' routerLink='/trade'>Trade</a></li>-->
         </ul>
     </nav>
     <div class='container'>
@@ -18,5 +18,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  pageTitle = 'Acme Product Management';
+  pageTitle = '';
 }
