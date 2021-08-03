@@ -43,119 +43,121 @@
   </table>
 </div>
 
+<div *ngIf = "trade.sector == 'nifty50' || trade.sector == 'niftyBank'">
+  <div class="container">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th></th>
+        <th>total contracts</th>
+        <th>new additions</th>
+        <th>% change</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Total calls</td>
+        <td>{{trade.totalCallsPuts != undefined ? trade.totalCallsPuts.totalCalls : 0}}</td>
+        <td>{{trade.totalCallsPuts != undefined ? trade.totalCallsPuts.totalCallsNewAdditions : 0}}</td>
+        <td>{{trade.totalCallsPuts != undefined ? trade.totalCallsPuts.totalCallsPercentageChange : 0}}</td>
+      </tr>
+      <tr>
+        <td>Total puts</td>
+        <td>{{trade.totalCallsPuts != undefined ? trade.totalCallsPuts.totalPuts : 0}}</td>
+        <td>{{trade.totalCallsPuts != undefined ? trade.totalCallsPuts.totalPutsNewAdditions : 0}}</td>
+        <td>{{trade.totalCallsPuts != undefined ? trade.totalCallsPuts.totalPutsPercentageChange : 0}}</td>
+      </tr>
+      <tr>
+        <td>PCR</td>
+        <td>{{trade.totalCallsPuts != undefined ? trade.totalCallsPuts.pcrTotalContracts : 0}}</td>
+        <td>{{trade.totalCallsPuts != undefined ? trade.totalCallsPuts.pcrNewAdditions : 0}}</td>
+      </tr>
+      <tr>
+        <td>Sentiments</td>
+        <td>{{trade.totalCallsPuts != undefined ? trade.totalCallsPuts.totalContractsSentiments : 0}}</td>
+        <td>{{trade.totalCallsPuts != undefined ? trade.totalCallsPuts.newAdditionsSentiments : 0}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 
-<div class="container">
-  <table class="table table-striped">
-    <thead>
-    <tr>
-      <th></th>
-      <th>total contracts</th>
-      <th>new additions</th>
-      <th>% change</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>Total calls</td>
-      <td>{{trade.totalCallsPuts != undefined ? trade.totalCallsPuts.totalCalls : 0}}</td>
-      <td>{{trade.totalCallsPuts != undefined ? trade.totalCallsPuts.totalCallsNewAdditions : 0}}</td>
-      <td>{{trade.totalCallsPuts != undefined ? trade.totalCallsPuts.totalCallsPercentageChange : 0}}</td>
-    </tr>
-    <tr>
-      <td>Total puts</td>
-      <td>{{trade.totalCallsPuts != undefined ? trade.totalCallsPuts.totalPuts : 0}}</td>
-      <td>{{trade.totalCallsPuts != undefined ? trade.totalCallsPuts.totalPutsNewAdditions : 0}}</td>
-      <td>{{trade.totalCallsPuts != undefined ? trade.totalCallsPuts.totalPutsPercentageChange : 0}}</td>
-    </tr>
-    <tr>
-      <td>PCR</td>
-      <td>{{trade.totalCallsPuts != undefined ? trade.totalCallsPuts.pcrTotalContracts : 0}}</td>
-      <td>{{trade.totalCallsPuts != undefined ? trade.totalCallsPuts.pcrNewAdditions : 0}}</td>
-    </tr>
-    <tr>
-      <td>Sentiments</td>
-      <td>{{trade.totalCallsPuts != undefined ? trade.totalCallsPuts.totalContractsSentiments : 0}}</td>
-      <td>{{trade.totalCallsPuts != undefined ? trade.totalCallsPuts.newAdditionsSentiments : 0}}</td>
-    </tr>
-    </tbody>
-  </table>
+
+  <div class="container">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Highest call</th>
+        <th>rank 1 </th>
+        <th>rank 2 </th>
+        <th>rank 3</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Strike</td>
+        <td>{{trade.highestCall != undefined ? trade.highestCall.strike1 : 0}}</td>
+        <td>{{trade.highestCall != undefined ? trade.highestCall.strike2 : 0}}</td>
+        <td>{{trade.highestCall != undefined ? trade.highestCall.strike3 : 0}}</td>
+      </tr>
+      <tr>
+        <td># of contracts</td>
+        <td>{{trade.highestCall != undefined ? trade.highestCall.numContracts1 : 0}}</td>
+        <td>{{trade.highestCall != undefined ? trade.highestCall.numContracts2 : 0}}</td>
+        <td>{{trade.highestCall != undefined ? trade.highestCall.numContracts3 : 0}}</td>
+      </tr>
+      <tr>
+        <td>change in contracts</td>
+        <td>{{trade.highestCall != undefined ? trade.highestCall.changeContract1 : 0}}</td>
+        <td>{{trade.highestCall != undefined ? trade.highestCall.changeContract2 : 0}}</td>
+        <td>{{trade.highestCall != undefined ? trade.highestCall.changeContract3 : 0}}</td>
+      </tr>
+      <tr>
+        <td>% change</td>
+        <td>{{trade.highestCall != undefined ? trade.highestCall.percentageChange1 : 0}}</td>
+        <td>{{trade.highestCall != undefined ? trade.highestCall.percentageChange2 : 0}}</td>
+        <td>{{trade.highestCall != undefined ? trade.highestCall.percentageChange3 : 0}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="container">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Highest put</th>
+        <th>rank 1 </th>
+        <th>rank 2 </th>
+        <th>rank 3</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Strike</td>
+        <td>{{trade.highestPut != undefined ? trade.highestPut.strike1 : 0}}</td>
+        <td>{{trade.highestPut != undefined ? trade.highestPut.strike2 : 0}}</td>
+        <td>{{trade.highestPut != undefined ? trade.highestPut.strike3 : 0}}</td>
+      </tr>
+      <tr>
+        <td># of contracts</td>
+        <td>{{trade.highestPut != undefined ? trade.highestPut.numContracts1 : 0}}</td>
+        <td>{{trade.highestPut != undefined ? trade.highestPut.numContracts2 : 0}}</td>
+        <td>{{trade.highestPut != undefined ? trade.highestPut.numContracts3 : 0}}</td>
+      </tr>
+      <tr>
+        <td>change in contracts</td>
+        <td>{{trade.highestPut != undefined ? trade.highestPut.changeContract1 : 0}}</td>
+        <td>{{trade.highestPut != undefined ? trade.highestPut.changeContract2 : 0}}</td>
+        <td>{{trade.highestPut != undefined ? trade.highestPut.changeContract3 : 0}}</td>
+      </tr>
+      <tr>
+        <td>% change</td>
+        <td>{{trade.highestPut != undefined ? trade.highestPut.percentageChange1 : 0}}</td>
+        <td>{{trade.highestPut != undefined ? trade.highestPut.percentageChange2 : 0}}</td>
+        <td>{{trade.highestPut != undefined ? trade.highestPut.percentageChange3 : 0}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
-
-<div class="container">
-  <table class="table table-striped">
-    <thead>
-    <tr>
-      <th>Highest call</th>
-      <th>rank 1 </th>
-      <th>rank 2 </th>
-      <th>rank 3</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>Strike</td>
-      <td>{{trade.highestCall != undefined ? trade.highestCall.strike1 : 0}}</td>
-      <td>{{trade.highestCall != undefined ? trade.highestCall.strike2 : 0}}</td>
-      <td>{{trade.highestCall != undefined ? trade.highestCall.strike3 : 0}}</td>
-    </tr>
-    <tr>
-      <td># of contracts</td>
-      <td>{{trade.highestCall != undefined ? trade.highestCall.numContracts1 : 0}}</td>
-      <td>{{trade.highestCall != undefined ? trade.highestCall.numContracts2 : 0}}</td>
-      <td>{{trade.highestCall != undefined ? trade.highestCall.numContracts3 : 0}}</td>
-    </tr>
-    <tr>
-      <td>change in contracts</td>
-      <td>{{trade.highestCall != undefined ? trade.highestCall.changeContract1 : 0}}</td>
-      <td>{{trade.highestCall != undefined ? trade.highestCall.changeContract2 : 0}}</td>
-      <td>{{trade.highestCall != undefined ? trade.highestCall.changeContract3 : 0}}</td>
-    </tr>
-    <tr>
-      <td>% change</td>
-      <td>{{trade.highestCall != undefined ? trade.highestCall.percentageChange1 : 0}}</td>
-      <td>{{trade.highestCall != undefined ? trade.highestCall.percentageChange2 : 0}}</td>
-      <td>{{trade.highestCall != undefined ? trade.highestCall.percentageChange3 : 0}}</td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="container">
-  <table class="table table-striped">
-    <thead>
-    <tr>
-      <th>Highest put</th>
-      <th>rank 1 </th>
-      <th>rank 2 </th>
-      <th>rank 3</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>Strike</td>
-      <td>{{trade.highestPut != undefined ? trade.highestPut.strike1 : 0}}</td>
-      <td>{{trade.highestPut != undefined ? trade.highestPut.strike2 : 0}}</td>
-      <td>{{trade.highestPut != undefined ? trade.highestPut.strike3 : 0}}</td>
-    </tr>
-    <tr>
-      <td># of contracts</td>
-      <td>{{trade.highestPut != undefined ? trade.highestPut.numContracts1 : 0}}</td>
-      <td>{{trade.highestPut != undefined ? trade.highestPut.numContracts2 : 0}}</td>
-      <td>{{trade.highestPut != undefined ? trade.highestPut.numContracts3 : 0}}</td>
-    </tr>
-    <tr>
-      <td>change in contracts</td>
-      <td>{{trade.highestPut != undefined ? trade.highestPut.changeContract1 : 0}}</td>
-      <td>{{trade.highestPut != undefined ? trade.highestPut.changeContract2 : 0}}</td>
-      <td>{{trade.highestPut != undefined ? trade.highestPut.changeContract3 : 0}}</td>
-    </tr>
-    <tr>
-      <td>% change</td>
-      <td>{{trade.highestPut != undefined ? trade.highestPut.percentageChange1 : 0}}</td>
-      <td>{{trade.highestPut != undefined ? trade.highestPut.percentageChange2 : 0}}</td>
-      <td>{{trade.highestPut != undefined ? trade.highestPut.percentageChange3 : 0}}</td>
-    </tr>
-    </tbody>
-  </table>
-</div>
