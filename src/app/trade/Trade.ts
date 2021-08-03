@@ -20,22 +20,7 @@ export interface TotalCallsPuts {
   newAdditionsSentiments: string;
 }
 
-export interface HighestCall {
-  strike1: number;
-  strike2: number;
-  strike3: number;
-  numContracts1: number;
-  numContracts2: number;
-  numContracts3: number;
-  changeContract1: number;
-  changeContract2: number;
-  changeContract3: number;
-  percentageChange1: number;
-  percentageChange2: number;
-  percentageChange3: number;
-}
-
-export interface HighestPut {
+export interface HighestCallOrPut {
   strike1: number;
   strike2: number;
   strike3: number;
@@ -54,6 +39,7 @@ export interface Trade {
   sector?: string;
   advanceDecline?: AdvanceDecline;
   totalCallsPuts?: TotalCallsPuts;
-  highestCall?: HighestCall;
-  highestPut?: HighestPut;
+  highestCall?: HighestCallOrPut;
+  highestPut?: HighestCallOrPut;
+  lastUpdatedTime?: string;
 }
